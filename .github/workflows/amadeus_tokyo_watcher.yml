@@ -23,13 +23,13 @@ jobs:
           AMADEUS_SECRET: ${{ secrets.AMADEUS_SECRET }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           ORIGINS: AUS,IAH,DFW
-          DEST: TYO
-          ADULTS: "2"
+          DEST: HND,NRT
+          ADULTS: "1"
           CURRENCY: USD
-          MAX_PRICE_PER_PAX: "1500"
+          MAX_PRICE_PER_PAX: "5000"
           TRIP_LENGTH: "14"
           YEAR: "2026"
           DEPART_START: "2026-01-20"
-          DEPART_END: "2026-03-10"
+          DEPART_END: "2026-05-10"
           DEPART_WEEKDAYS: "4,5"          # Fri, Sat
           MAX_REQUESTS_PER_RUN: "80"
