@@ -8,16 +8,16 @@ AMADEUS_KEY = os.environ["AMADEUS_KEY"]
 AMADEUS_SECRET = os.environ["AMADEUS_SECRET"]
 
 ORIGINS = os.environ.get("ORIGINS", "AUS,IAH,DFW").split(",")
-DEST = os.environ.get("DEST", "TYO")  # Tokyo area (HND/NRT)
-ADULTS = int(os.environ.get("ADULTS", "2"))
+DEST = os.environ.get("DEST", "HND,NRT")  # Tokyo area (HND/NRT)
+ADULTS = int(os.environ.get("ADULTS", "1"))
 CURRENCY = os.environ.get("CURRENCY", "USD")
-MAX_PRICE_PER_PAX = float(os.environ.get("MAX_PRICE_PER_PAX", "1500"))
+MAX_PRICE_PER_PAX = float(os.environ.get("MAX_PRICE_PER_PAX", "5000"))
 TRIP_LENGTH = int(os.environ.get("TRIP_LENGTH", "14"))
 
 # Search window (default: late Aug to early Oct next year to cover September trips)
 year = int(os.environ.get("YEAR", str(dt.date.today().year + 1)))
 DEPART_START = dt.date.fromisoformat(os.environ.get("DEPART_START", f"{year}-01-20"))
-DEPART_END = dt.date.fromisoformat(os.environ.get("DEPART_END", f"{year}-03-10"))
+DEPART_END = dt.date.fromisoformat(os.environ.get("DEPART_END", f"{year}-05-10"))
 
 # Only search Fri/Sat departures to limit API usage (change if you want daily)
 DEPART_WEEKDAYS = set(int(x) for x in os.environ.get("DEPART_WEEKDAYS", "4,5").split(","))  # 0=Mon ... 6=Sun
