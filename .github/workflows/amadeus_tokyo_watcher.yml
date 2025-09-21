@@ -4,6 +4,7 @@ on:
   schedule:
     # Run twice a week to respect Amadeus 500 req/mo free tier
     - cron: "00 15 * * 2,6"   # Tue & Sat at 15:00 UTC
+  workflow_dispatch: {}
   
 
 jobs:
