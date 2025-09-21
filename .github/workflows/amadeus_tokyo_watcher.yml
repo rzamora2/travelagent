@@ -3,7 +3,7 @@ name: amadeus-tokyo-watcher
 on:
   schedule:
     # Run twice a week to respect Amadeus 500 req/mo free tier
-    - cron: "*/5 * * * *"   # Tue & Sat at 15:00 UTC
+    - cron: "*/1 * * * *"   # Tue & Sat at 15:00 UTC
   workflow_dispatch: {}
 
 jobs:
