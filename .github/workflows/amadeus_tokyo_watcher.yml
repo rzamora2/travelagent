@@ -31,7 +31,7 @@ jobs:
           MAX_PRICE_PER_PAX: "1500"
           TRIP_LENGTH: "14"
           YEAR: "2026"
-          DEPART_START: "2026-08-20"
-          DEPART_END: "2026-10-10"
+          DEPART_START: "2026-01-20"
+          DEPART_END: "2026-03-10"
           DEPART_WEEKDAYS: "4,5"          # Fri, Sat
           MAX_REQUESTS_PER_RUN: "80"
