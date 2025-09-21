@@ -7,7 +7,7 @@ from typing import List, Dict
 AMADEUS_KEY = os.environ["AMADEUS_KEY"]
 AMADEUS_SECRET = os.environ["AMADEUS_SECRET"]
 
-ORIGINS = os.environ.get("ORIGINS", "AUS,IAH,HOU,DFW,DAL").split(",")
+ORIGINS = os.environ.get("ORIGINS", "AUS,IAH,DFW").split(",")
 DEST = os.environ.get("DEST", "TYO")  # Tokyo area (HND/NRT)
 ADULTS = int(os.environ.get("ADULTS", "2"))
 CURRENCY = os.environ.get("CURRENCY", "USD")
@@ -23,8 +23,6 @@ DEPART_END = dt.date.fromisoformat(os.environ.get("DEPART_END", f"{year}-10-10")
 DEPART_WEEKDAYS = set(int(x) for x in os.environ.get("DEPART_WEEKDAYS", "4,5").split(","))  # 0=Mon ... 6=Sun
 
 # Notifications
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
-TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT")
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK")
 
 # Safety cap for requests per run (avoid blowing free tier)
