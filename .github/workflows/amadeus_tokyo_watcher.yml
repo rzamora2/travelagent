@@ -1,0 +1,36 @@
+name: amadeus-tokyo-watcher
+
+on:
+  schedule:
+    # Run twice a week to respect Amadeus 500 req/mo free tier
+    - cron: "0 15 * * 2,6"   # Tue & Sat at 15:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Run watcher
+        run: python watch_tokyo_amadeus.py
+        env:
+          AMADEUS_KEY: ${{ secrets.AMADEUS_KEY }}
+          AMADEUS_SECRET: ${{ secrets.AMADEUS_SECRET }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          ORIGINS: AUS,IAH,HOU,DFW,DAL
+          DEST: TYO
+          ADULTS: "2"
+          CURRENCY: USD
+          MAX_PRICE_PER_PAX: "1500"
+          TRIP_LENGTH: "14"
+          YEAR: "2026"
+          DEPART_START: "2026-08-20"
+          DEPART_END: "2026-10-10"
+          DEPART_WEEKDAYS: "4,5"          # Fri, Sat
+          MAX_REQUESTS_PER_RUN: "80"
