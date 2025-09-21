@@ -15,7 +15,7 @@ MAX_PRICE_PER_PAX = float(os.environ.get("MAX_PRICE_PER_PAX", "1500"))
 TRIP_LENGTH = int(os.environ.get("TRIP_LENGTH", "14"))
 
 # Search window (default: late Aug to early Oct next year to cover September trips)
-year = int(os.environ.get("YEAR", str(dt.date.today().year) + 1))
+year = int(os.environ.get("YEAR", str(dt.date.today().year + 1)))
 DEPART_START = dt.date.fromisoformat(os.environ.get("DEPART_START", f"{year}-01-20"))
 DEPART_END = dt.date.fromisoformat(os.environ.get("DEPART_END", f"{year}-03-10"))
 
