@@ -23,7 +23,7 @@ jobs:
           AMADEUS_SECRET: ${{ secrets.AMADEUS_SECRET }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           ORIGINS: AUS,IAH,DFW
-          DEST: HND,NRT
+          DEST: TYO
           ADULTS: "1"
           CURRENCY: USD
           MAX_PRICE_PER_PAX: "5000"
